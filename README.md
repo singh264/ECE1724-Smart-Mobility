@@ -7,7 +7,7 @@
 ---
 # Important Notes  
 
-### Project_1.ipynb
+### main.ipynb
 - This will act as a main file for the project
 
 ### exp.ipnb
