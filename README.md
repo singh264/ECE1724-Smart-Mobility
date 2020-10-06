@@ -21,3 +21,7 @@
   sys.path.append("../")
   from utilities include *
   ```
+
+### bing_traffic
+- Module contains `bing_live_traffic_incidents_api.py` that retrieve live traffic incidents from the Bing Traffic API for a given bounding box on the map. 
+- Checkout this [Wiki](https://github.com/singh264/smart-mobility/wiki/Bing-Traffic) to learn more about the Bing Traffic API.
