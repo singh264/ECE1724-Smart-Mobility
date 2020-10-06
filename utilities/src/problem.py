@@ -25,7 +25,8 @@ lat1: latitude of the second point
 lon2: longitude of the second point
 lat2: latitude of the second point
 
-Returns:
+Returns
+-------
 distance: the straight line distance calculated by pythagoras theorem
 
 """
@@ -45,7 +46,8 @@ lat1: latitude of the second point
 lon2: longitude of the second point
 lat2: latitude of the second point
 
-Returns:
+Returns
+-------
 distance: the distance of the great circle arc between two points
           calculated by harversine method
 """
@@ -108,8 +110,8 @@ def astar_heuristic(G, origin, destination, measuring_dist = straight_line):
 
 
 
-########################################################################
-########################################################################
+##########################################################################################################
+##########################################################################################################
 
 
 ########################################################################
