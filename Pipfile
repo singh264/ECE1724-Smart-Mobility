@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 requests = "*"
+osmnx = "*"
+osmapi = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"
