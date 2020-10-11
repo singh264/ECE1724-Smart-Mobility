@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 class MapEdgesCoordinatesDowloader:
-    def __init__(self, place: str = 'North York, Ontario, Canada', storage_path: Path = Path('./data')):
+    def __init__(self, place: str, storage_path: Path = Path('./data')):
         self.__place = place
         self.__storage_path = storage_path
         self.__storage_path.mkdir(parents=True, exist_ok=True)
