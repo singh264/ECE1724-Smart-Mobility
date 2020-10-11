@@ -1,7 +1,9 @@
 from typing import Dict, List, Any
 from datetime import datetime 
 
-from models.coordinate import Coordinate
+# import from root directory to work with binder
+# from models.coordinate import Coordinate
+from bing_traffic.models.coordinate import Coordinate
 
 class TrafficIncident:
     def __init__(self, traffic_incident: Dict[str, Any]) -> None:
