@@ -15,3 +15,6 @@ The following `Overpass turbo`'s wizard synatx and script:
 * Hospitals in North York 
   * **`amenity= hospital in "North York, Ontario, Canada"`** to find all Firestations in North York. 
   * [Script](./Dataset/scripts/hospitals_northyork.oql)
+ 
+ ### Traffic Data - Using `Bing Traffic` API
+ The traffic data contains the timestamp, origin latitude, origin longitude, destination latitude, destination longitude and the severity of Traffic. The traffic data is extracted every hour and converted into a csv file to favor simpler preprocessing and datacleaning methods for the weighted knn. The clustering is weighted upon the severity.  
