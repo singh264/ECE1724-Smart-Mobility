@@ -15,6 +15,25 @@ The following `Overpass turbo`'s wizard synatx and script:
 * Hospitals in North York 
   * **`amenity= hospital in "North York, Ontario, Canada"`** to find all Firestations in North York. 
   * [Script](./Dataset/scripts/hospitals_northyork.oql)
- 
- ### Traffic Data - Using `Bing Traffic` API
- The traffic data contains the timestamp, origin latitude, origin longitude, destination latitude, destination longitude and the severity of Traffic. The traffic data is extracted every hour and converted into a csv file to favor simpler preprocessing and datacleaning methods for the weighted knn. The clustering is weighted upon the severity.  
+
+
+### Traffic data - Using `Bing Traffic API`
+We are collecting traffic incident data only for our chosen location: North York, Ontario, Canada.
+
+* Live traffic incident data in North York
+  * Using our custom `BingTrafficIncidentsApi`
+  * Source code: `bing_traffic/bing_traffic_incidents_api.py:get_live_traffic_incidents(..)` 
+
+* Historical traffic incident data in North York
+  * Using our custom `BingTrafficIncidentsApi`
+  * Source code: `bing_traffic/bing_traffic_incidents_api.py:download_traffic_incidents(..)`
+  * All historical traffic incident data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
+
+### Map edges coordinates data - Using `Osmapi`
+We are collecting map edges coordinate data only for our chosen location: North York, Ontario, Canada.
+
+* Edges coordinates in North York
+  * Using our custom `MapEdgesCoordinatesDowloader`
+  * Source code: `map/map_edges_coordinates_downloader.py:download_edges_coordinates(..)` 
+  * All edges coordinates data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
+
