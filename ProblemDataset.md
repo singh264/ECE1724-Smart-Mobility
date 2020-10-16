@@ -16,7 +16,6 @@ The following `Overpass turbo`'s wizard synatx and script:
   * **`amenity= hospital in "North York, Ontario, Canada"`** to find all Firestations in North York. 
   * [Script](./Dataset/scripts/hospitals_northyork.oql)
 
-
 ### Traffic data - Using `Bing Traffic API`
 We are collecting traffic incident data only for our chosen location: North York, Ontario, Canada.
 
@@ -36,4 +35,3 @@ We are collecting map edges coordinate data only for our chosen location: North 
   * Using our custom `MapEdgesCoordinatesDowloader`
   * Source code: `map/map_edges_coordinates_downloader.py:download_edges_coordinates(..)` 
   * All edges coordinates data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
-

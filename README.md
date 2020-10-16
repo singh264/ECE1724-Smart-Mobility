@@ -12,8 +12,6 @@
 
 ### exp.ipnb
 - Includes experimental codes. Use this to test out code. 
-### knn.ipynb
-- Includes weighted knn code for clustering lat, long from traffic data to identify key locations. The severity of traffic is treated as frequency.
 
 ### sample_codes
 - Includes demo algorithms provided by professor.  
