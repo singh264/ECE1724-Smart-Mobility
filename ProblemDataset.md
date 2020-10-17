@@ -5,7 +5,7 @@ The following document contains key map locations and APIs utilized for the proj
 
 **Breif Summary** 
 
-We use osmnx API to get the information about the nodes and edges contained in the map of North York. Locations of fire stations and hospitals are identified using the Overpass scripts. We also use live and historical accident and construction locations to identify the optimal path for an emergency vehicle to meet a crucial response time. We have utilized Bing Traffic API to capture all the accident and construction zones that have occurred within the time frame of 3 weeks. This acts as an historical data for the project. We have used weighted-KNN algorithm on this data to help us capture zones of busy areas. Along, with this, live accident data is used to identify the busy streets. We plan to design an algorithm that integrates all these data to fine-tune the routing of emergency vehicles. The objectives considered include minimising the total travel time to a dispatch location while eliminating busy areas, which is what the public is concerned with the most.     
+We use osmnx API to get the information about the nodes and edges contained in the map of North York. Locations of fire stations and hospitals are identified using the Overpass scripts. We are also collecting live and historical accident and construction locations to identify the optimal path for an emergency vehicle to meet a crucial response time. We have utilized Bing Traffic API to capture all the accident and construction zones that have occurred within the time frame of 3 weeks. This acts as an historical data for the project. We have used weighted-KNN algorithm on this data to help us capture zones of busy areas. In addition, we acquire live accident data using the Bing Traffic API and then use it to identify the busy streets. We plan to design an algorithm that integrates all these data to fine-tune the routing of emergency vehicles. The objectives considered include minimising the total travel time to a dispatch location while eliminating busy areas, which is what the public is concerned with the most.     
 
 Outlined bellow is a detailed summary of the data we have utlizied and/or captured for this project. 
 
@@ -33,7 +33,7 @@ The following `Overpass turbo`'s wizard synatx and script:
 
 * Historical traffic incident data in North York
   * Using our **custom** `BingTrafficIncidentsApi`
-  * Source code: `bing_traffic/bing_traffic_incidents_api.py:download_traffic_incidents(..)`
+  * Source code: [`bing_traffic/bing_traffic_incidents_api.py:download_traffic_incidents(..)`](https://github.com/singh264/smart-mobility/blob/master/bing_traffic/bing_traffic_incidents_api.py)
   * All historical traffic incident data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
     * Above data contains the timestamp, origin latitude, origin longitude, destination latitude, destination longitude and the severity of traffic. The traffic data is extracted every hour and converted into a csv file to favor simpler preprocessing and datacleaning methods for the weighted knn. The clustering is weighted upon the severity. 
 
@@ -42,7 +42,7 @@ The following `Overpass turbo`'s wizard synatx and script:
 
 * Edges coordinates in North York
   * Using our **custom** `MapEdgesCoordinatesDowloader`
-  * Source code: `map/map_edges_coordinates_downloader.py:download_edges_coordinates(..)` 
+  * Source code: [`map/map_edges_coordinates_downloader.py:download_edges_coordinates(..)`](https://github.com/singh264/smart-mobility/blob/master/map/map_edges_coordinates_downloader.py) 
   * All edges coordinates data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
     * Above data is created to save the run-time of the application. Rather than mapping each osmid to its latitude and longitude during runtime, we do this ahead of time to save call to OsmApi each time. This improves the overhead performance significantly. 
   
