@@ -27,23 +27,23 @@ The following `Overpass turbo`'s wizard synatx and script:
 ### Traffic data - Using `Bing Traffic API`
 
 * Live traffic incident data in North York
-  * Using our custom `BingTrafficIncidentsApi`
+  * Using our **custom** `BingTrafficIncidentsApi`
   * Source code: `bing_traffic/bing_traffic_incidents_api.py:get_live_traffic_incidents(..)` 
+  * We take a snapshot of the current accidents to map out edge weights on the map. This data is then used once again to send out emergency dispatch at locations where there are severe accidents.
 
 * Historical traffic incident data in North York
-  * Using our custom `BingTrafficIncidentsApi`
+  * Using our **custom** `BingTrafficIncidentsApi`
   * Source code: `bing_traffic/bing_traffic_incidents_api.py:download_traffic_incidents(..)`
   * All historical traffic incident data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
+    * Above data contains the timestamp, origin latitude, origin longitude, destination latitude, destination longitude and the severity of traffic. The traffic data is extracted every hour and converted into a csv file to favor simpler preprocessing and datacleaning methods for the weighted knn. The clustering is weighted upon the severity. 
 
 
 ### Map edges coordinates data - Using `Osmapi`
 
 * Edges coordinates in North York
-  * Using our custom `MapEdgesCoordinatesDowloader`
+  * Using our **custom** `MapEdgesCoordinatesDowloader`
   * Source code: `map/map_edges_coordinates_downloader.py:download_edges_coordinates(..)` 
   * All edges coordinates data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
+    * Above data is created to save the run-time of the application. Rather than mapping each osmid to its latitude and longitude during runtime, we do this ahead of time to save call to OsmApi each time. This improves the overhead performance significantly. 
   
   
-### Traffic Data - Using `Bing Traffic` API
-The traffic data contains the timestamp, origin latitude, origin longitude, destination latitude, destination longitude and the severity of traffic. The traffic data is extracted every hour and converted into a csv file <LINK> to favor simpler preprocessing and datacleaning methods for the weighted knn. The clustering is weighted upon the severity. 
-
