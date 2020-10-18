@@ -5,3 +5,8 @@ plotly
 folium
 keplergl
 osmapi
+matplotlib
+scipy
+scikit-learn
+pandas
+numpy
