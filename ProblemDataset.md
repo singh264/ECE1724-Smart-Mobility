@@ -44,6 +44,6 @@ The following `Overpass turbo`'s wizard synatx and script:
   * Using our **custom** `MapEdgesCoordinatesDowloader`
   * Source code: [`map/map_edges_coordinates_downloader.py:download_edges_coordinates(..)`](https://github.com/singh264/smart-mobility/blob/master/map/map_edges_coordinates_downloader.py) 
   * All edges coordinates data can be found on our [Drive](https://drive.google.com/drive/folders/1ObGRrqJbvuVqW3wQDg16Wnjh-9BA0K04)
-    * Above data is created to reduce the run-time of the application. Rather than mapping each osmid to its latitude and longitude during runtime, we do this ahead of time to save call to OsmApi each time. This improves the overhead performance significantly, and it will be useful for demo purposes.
+    * The above data is created to reduce the run-time of the application. Rather than mapping each osmid to its latitude and longitude during runtime, we do this ahead of time to save call to OsmApi each time. This improves the overhead performance significantly, and it will be useful for demo purposes.
   
   
