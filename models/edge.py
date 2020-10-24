@@ -1,6 +1,7 @@
 from typing import List, Any
 
 from models.coordinate import Coordinate
+from models.edge_traffic_incident import EdgeTrafficIncident
 
 
 class Edge:
@@ -13,6 +14,8 @@ class Edge:
         self.__end_osmid = end_osmid
         self.__start_coordinate = start_coordinate
         self.__end_coordinate = end_coordinate
+        self.__nearby_traffic_incidents = []
+        self.__risk_score = 0
     
     def __parse_max_speed(self, max_speed: Any) -> List[float]:
         if (isinstance(max_speed, str)):
@@ -55,6 +58,25 @@ class Edge:
     @property
     def end_coordinate(self) -> Coordinate:
         return self.__end_coordinate
+
+    @property
+    def nearby_traffic_incidents(self) -> List[EdgeTrafficIncident]:
+        return self.__nearby_traffic_incidents
+
+    def add_nearby_traffic_incident(self, traffic_incident: EdgeTrafficIncident) -> None:
+        self.__nearby_traffic_incidents.append(traffic_incident)
+        
+        self.__adjust_risk_score(traffic_incident)
+
+    def __adjust_risk_score(self, traffic_incident: EdgeTrafficIncident) -> None:
+        self.__risk_score += traffic_incident.severity * traffic_incident.distance_to_edge_in_meters
+
+    @property
+    def risk_score(self) -> float:
+        return self.__risk_score
+    
+    def normalize_risk_score(self, total_risk_score) -> None:
+        self.__risk_score /= total_risk_score
     
     def __str__(self) -> str:
         return f'''Edge: {self.osmid},
@@ -64,4 +86,6 @@ class Edge:
                     start_osmid: {self.start_osmid},
                     end_osmid: {self.end_osmid},
                     start_coordinate: {self.start_coordinate},
-                    end_coordinate: {self.end_coordinate}'''
+                    end_coordinate: {self.end_coordinate},
+                    nearby_traffic_incidents: {self.nearby_traffic_incidents},
+                    risk_score: {self.risk_score}'''
