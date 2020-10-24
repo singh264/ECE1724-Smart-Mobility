@@ -69,7 +69,7 @@ class Edge:
         self.__adjust_risk_score(traffic_incident)
 
     def __adjust_risk_score(self, traffic_incident: EdgeTrafficIncident) -> None:
-        self.__risk_score += traffic_incident.severity * traffic_incident.distance_to_edge_in_meters
+        self.__risk_score += traffic_incident.severity / traffic_incident.distance_to_edge_in_meters
 
     @property
     def risk_score(self) -> float:
