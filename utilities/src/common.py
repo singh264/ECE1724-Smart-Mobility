@@ -138,6 +138,12 @@ def cost(G, route):
         weight += G[u][v][0]['length']   
     return weight
 
+def cost_pso(G, route, dd):
+    weight = 0
+    for u, v in zip(route, route[1:]):
+        weight += G[u][v][0]['length'] * (dd[(u,v)]+1) 
+    return weight
+
 
 """
 Given an itertable with nodes id and the networkx graph
