@@ -8,13 +8,13 @@
 # Important Notes  
 
 ### main.ipynb
-- This will act as a main file for the project
+- This is the main file for the project
 
 ### exp.ipnb
-- Includes experimental codes. Use this to test out code.
+- Includes experimental codes. Use this to test out code. This is not part of the project. 
 
 ### kmeans.ipynb
-- Includes kmeans code for clustering lat, long from traffic data to identify key locations. The severity of traffic is treated as frequency.
+- Includes k-means code for clustering lat, long from traffic data to identify key locations. The severity of traffic is treated as frequency. The nodes outputted from this file is used directly in the main.py. This is a standalone file.  
 
 ### sample_codes
 - Includes demo algorithms provided by professor.  
@@ -28,3 +28,7 @@
 ### bing_traffic
 - Module contains `bing_live_traffic_incidents_api.py` that retrieve live traffic incidents from the Bing Traffic API for a given bounding box on the map.
 - Checkout this [Wiki](https://github.com/singh264/smart-mobility/wiki/Bing-Traffic) to learn more about the Bing Traffic API.
+
+### Pictures 
+- Includes demo pictures. 
+- These pictures are used in the presentation. 
