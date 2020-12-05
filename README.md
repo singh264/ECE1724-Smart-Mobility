@@ -10,20 +10,14 @@
 ### main.ipynb
 - This is the main file for the project
 
-### exp.ipnb
-- Includes experimental codes. Use this to test out code. This is not part of the project. 
-
 ### kmeans.ipynb
 - Includes k-means code for clustering lat, long from traffic data to identify key locations. The severity of traffic is treated as frequency. The nodes outputted from this file is used directly in the main.py. This is a standalone file.  
 
-### sample_codes
-- Includes demo algorithms provided by professor.  
-- Utilities folder is included one level up. Hence, you will need to make the following modification when running/testing any of the algorithms in this folder. 
-  ```python
-  import sys
-  sys.path.append("../")
-  from utilities include *
-  ```
+### models
+- Includes container classes to encapsulate useful details about coordinates, edges and traffic incidents.
+
+### map
+- Standalone tool to download and cache the coordinates of the edges of the North-York map.
 
 ### bing_traffic
 - Module contains `bing_live_traffic_incidents_api.py` that retrieve live traffic incidents from the Bing Traffic API for a given bounding box on the map.
