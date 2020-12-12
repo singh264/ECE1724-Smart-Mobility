@@ -5,13 +5,18 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/singh264/smart-mobility/master)
 
 ---
-# Important Notes  
+# Getting Started
+- To run the main code of our project checkout our repo's binder: https://mybinder.org/v2/gh/singh264/smart-mobility/master.
+- To inspect all assets of our project visit our public repo: https://github.com/singh264/smart-mobility.
+
+
+# Files and Directories 
 
 ### main.ipynb
-- This is the main file for the project
+- This is the main file for the project.
 
 ### kmeans.ipynb
-- Includes k-means code for clustering lat, long from traffic data to identify key locations. The severity of traffic is treated as frequency. The nodes outputted from this file is used directly in the main.py. This is a standalone file.  
+- Includes k-means code for clustering lat, long from traffic data to identify key locations. The severity of traffic is treated as frequency. The nodes outputted from this file is used directly in the main.ipynb. This is a standalone file.  
 
 ### models
 - Includes container classes to encapsulate useful details about coordinates, edges and traffic incidents.
